@@ -1,0 +1,32 @@
+public class Main
+{
+	public static void main(String[] args) {
+		
+        // the sum and product should be inside the loop
+        
+        for(int i = 1; i <= 100; i++){
+            
+            int sum = 0;
+            int product = 1;
+            
+            // each number has its own sum and product so it is inside loop 
+            // if it is outside the loop then sum and product value remains same.. such thing we use for factorial purpoe
+            
+            int temp = i;
+            int name = i;
+            while(temp > 0){
+                int digit = temp%10;  // it will give the last digit
+                sum = sum + digit;
+                product = product * digit;
+                temp = temp/10;
+                
+            }
+          if(sum == product){
+            System.out.println(name);
+          }
+      
+           // getting one value less
+        }
+        
+	}
+}
