@@ -4,32 +4,44 @@ public class DisariumNumberSeries {
 
     public static void main(String[] args) {
 
-        for (int i = 1; i <= 100; i++) {
+  // example of disarium series is 135 so 1 ^1 and + 3^2 and 5^3 the sum of this numbers is equal to 135
+    	
+    	
+    int a = 135;
+    int e1 = a;
+    int e2 = a;
+    
+    // count the count
+    int count=0;
+    while(e1 > 0) {
+    	count++;
+    	e1 = e1/10;
+    }
+    System.out.println(count);
+//    now count is 3
+    
+	int total = 0;
+	// sum and total if inside the loop it will reset to 0
+    while(e2 > 0) {
+    	int digit = e2%10;
+    	// perform calculation with the last digit
+    	int i = 1;
+    	int sum = 1;
+    	while( i <= count ) {
+    		
+    	sum = sum * digit; // this is doing like 3 * 5
+    	i++;
+    	}
+    	total = total + sum;
+    	count--;
+    	e2 = e2/10;
+    }
+    if(total == a) {
+		System.out.println(a);
 
-            int temp = i;
-            int sum = 0;
-            int digits = 0;
-
-            // Step 1: count digits
-            int count = i;
-            while (count > 0) {
-                digits++;
-                count = count / 10;
-            }
-
-            // Step 2: calculate Disarium sum
-            while (temp > 0) {
-                int digit = temp % 10;
-                sum += Math.pow(digit, digits);
-                digits--;
-                temp = temp / 10;
-            }
-
-            // Step 3: check
-            if (sum == i) {
-                System.out.println(i);
-            }
-        }
+		
+	}
+    	
 
 		
 		
